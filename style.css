@@ -14,6 +14,10 @@
   border-color: inherit;
 }
 
+.navbar.is--scrolled .navbar--logo-link {
+  background-image: url("https://uploads-ssl.webflow.com/64a8a8447dba1d15884cb304/654530f77b58ac44763a851f_logo2Asset%201.png");
+}
+
 /* Base styles */
 .max--600 {
   overflow: hidden; /* Prevents overflow of the moving elements */
