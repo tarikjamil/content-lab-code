@@ -20,11 +20,8 @@
 }
 
 .looping--row {
-  width: 100%; /* Set the width of the rows */
-  height: 50px; /* Set the height of the rows, adjust as needed */
-  background-color: #ccc; /* Set a background color, just for the example */
   position: relative; /* Needed for animation */
-  animation: loop-animation 5s linear infinite; /* Apply the animation */
+  animation: loop-animation 30s linear infinite; /* Apply the animation */
 }
 
 /* Animation keyframes */
