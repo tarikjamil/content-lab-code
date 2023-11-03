@@ -13,3 +13,31 @@
   color: inherit;
   border-color: inherit;
 }
+
+/* Base styles */
+.max--600 {
+  overflow: hidden; /* Prevents overflow of the moving elements */
+}
+
+.looping--row {
+  width: 100%; /* Set the width of the rows */
+  height: 50px; /* Set the height of the rows, adjust as needed */
+  background-color: #ccc; /* Set a background color, just for the example */
+  position: relative; /* Needed for animation */
+  animation: loop-animation 5s linear infinite; /* Apply the animation */
+}
+
+/* Animation keyframes */
+@keyframes loop-animation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+/* Hover effect to stop the animation */
+.max--600:hover .looping--row {
+  animation-play-state: paused; /* Stops the animation */
+}
