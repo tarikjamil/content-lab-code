@@ -14,7 +14,7 @@ $(document).ready(function () {
 // count up numbers
 document.addEventListener("DOMContentLoaded", function () {
   const counters = document.querySelectorAll(".counterup");
-  const animationDuration = 1000; // Animation time in milliseconds
+  const animationDuration = 2000; // Animation time in milliseconds
 
   const animateCounter = (counter, duration) => {
     let target = +counter.getAttribute("data-target");
