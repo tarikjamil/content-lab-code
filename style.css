@@ -1,0 +1,15 @@
+.navbar.is--scrolled {
+  background-color: white;
+  color: black;
+}
+
+.navbar.is--scrolled .nav--dropdown-toggle,
+.navbar.is--scrolled .navlink,
+.navbar.is--scrolled .navbar--logo-link {
+  color: inherit;
+}
+
+.navbar.is--scrolled .btn--primary {
+  color: inherit;
+  border-color: inherit;
+}
