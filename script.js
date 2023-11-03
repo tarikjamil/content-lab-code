@@ -19,40 +19,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const animateCounter = (counter, duration) => {
     let target = +counter.getAttribute("data-target");
     let start = 0;
-    let stepTime = duration / target;
+    let stepTime = 10; // How often to update the count, in milliseconds
+    let steps = duration / stepTime; // Total number of updates
+    let increment = target / steps; // Increment value for each update
+
+    console.log("Starting animation for", counter);
 
     let interval = setInterval(() => {
-      start += 1;
-      counter.textContent = start;
+      start += increment;
+      counter.textContent = Math.floor(start); // Update the display with the integer part
 
       if (start >= target) {
         clearInterval(interval);
-        counter.textContent = target;
+        counter.textContent = target; // Ensure it ends on the exact target number
       }
     }, stepTime);
   };
 
-  // Function to check if the element is in view
+  // Simplified viewport check
   const isInViewport = (el) => {
     const rect = el.getBoundingClientRect();
     return (
       rect.top >= 0 &&
-      rect.left >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        (window.innerHeight || document.documentElement.clientHeight)
     );
   };
 
-  // Function to run the counter animation on scroll
   const runCounterOnScroll = () => {
     counters.forEach((counter) => {
       if (isInViewport(counter) && !counter.classList.contains("animated")) {
+        counter.classList.add("animated"); // Mark as animated
         animateCounter(counter, animationDuration);
-        counter.classList.add("animated");
       }
     });
   };
+
+  // Initial check in case the counter is already in view on load
+  runCounterOnScroll();
 
   // Listen for scroll events
   window.addEventListener("scroll", runCounterOnScroll);
