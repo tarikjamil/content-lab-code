@@ -1,0 +1,35 @@
+<div class="max--600">
+  <div class="looping--row"></div>
+  <div class="looping--row"></div>
+  <div class="looping--row"></div>
+</div>
+
+<a
+  href='https://collection-map.webflow.io/locations/{{wf {"path":"slug","type":"PlainText"\} }}'
+  class="c-map_dot w-inline-block"
+  style='margin-top: {{wf {"path":"y-coordinates","type":"Number"\} }}em; margin-left: {{wf {"path":"x-coordinates","type":"Number"\} }}em;'
+  ><p
+    class="c-map_location"
+    style="
+      opacity: 0;
+      transform: translate3d(50%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      display: none;
+    "
+  >
+    {{wf
+    {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\}
+    }}
+  </p>
+  <div class="c-map_circle">
+    <div
+      class="c-map_fill"
+      style="
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+          rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+      "
+    ></div></div
+></a>
